@@ -1,11 +1,11 @@
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class EpPodcast extends Musica {
 
     HashMap<String, Double> votos;
-    String descrição;
+    String descricao;
 
     EpPodcast(String nome, String author, String genre, String duracao, String lancamento) {
         super(nome, author, genre, duracao, lancamento);
@@ -21,7 +21,7 @@ public class EpPodcast extends Musica {
 
         try{
             var writter = new FileWriter(this.nome + ".txt");
-            writter.write(this.descrição);
+            writter.write(this.descricao);
             writter.close();
         } catch (IOException e){
             e.printStackTrace();
@@ -29,11 +29,27 @@ public class EpPodcast extends Musica {
         }
     }
 
-    public String getDescrição() {
-        return descrição;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescricao(String path) {
+
+        var f = new File(path);
+
+        String descricao = "";
+
+        try(var scanner = new Scanner(f);){
+            while(scanner.hasNextLine()){
+                var line = scanner.nextLine();
+                descricao += line + ' ';
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Erro!\nNão foi possível ler o arquivo");
+        }
+
+
+        this.descricao = descricao;
     }
 }
