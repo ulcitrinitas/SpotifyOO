@@ -1,11 +1,13 @@
 import java.util.Date;
+import java.util.HashMap;
 
 public class Musica {
 
     String nome;
     String author;
     String genre;
-    double classificacao;
+    double classificacao_total;
+    HashMap<String, Double> classificacoes;
     long duracao;
     String lancamento;
     String letra;
@@ -32,6 +34,18 @@ public class Musica {
         return seg * 1000;
     }
 
+
+    private double mediaClassificacao(double classi){
+        double soma = 0;
+        for(var c : classificacoes.values()){
+            soma += c;
+        }
+
+        var media = soma / classificacoes.size();
+
+        return media;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -56,20 +70,12 @@ public class Musica {
         this.genre = genre;
     }
 
-    public double getClassificacao() {
-        return classificacao;
-    }
-
-    public void setClassificacao(double classificacao) {
-        this.classificacao = classificacao;
-    }
-
     public long getDuracao() {
         return duracao;
     }
 
-    public void setDuracao(long duracao) {
-        this.duracao = duracao;
+    public void setDuracao(String duracao) {
+        this.duracao = calculoDuracao(duracao);
     }
 
     public String getLancamento() {
@@ -86,5 +92,13 @@ public class Musica {
 
     public void setLetra(String letra) {
         this.letra = letra;
+    }
+
+    public double getClassificacao_total() {
+        return classificacao_total;
+    }
+
+    public void setClassificacao_total(double classificacao_total) {
+        this.classificacao_total = classificacao_total;
     }
 }
