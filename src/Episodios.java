@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Episodios extends Musica {
@@ -32,6 +33,12 @@ public class Episodios extends Musica {
 
     public void comentar(String nome, String comentario){
         comentarios.put(nome, comentario);
+    }
+
+    public void mostrarComentarios(){
+        for(Map.Entry<String, String> e: this.comentarios.entrySet()){
+            System.out.println(e.getKey() + ": " + e.getValue());
+        }
     }
 
     public void escreverDescricao(){
