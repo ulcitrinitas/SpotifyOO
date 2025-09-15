@@ -1,4 +1,4 @@
 # SpotifyOO
 
-projeto de herança com elementos do spotifu
+projeto de herança com elementos do spotify
 
