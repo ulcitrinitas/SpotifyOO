@@ -2,19 +2,36 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class EpPodcast extends Musica {
+public class Episodios extends Musica {
 
     HashMap<String, Double> votos;
+    HashMap<String, String> comentarios;
     String descricao;
 
-    EpPodcast(String nome, String author, String genre, String duracao, String lancamento) {
+    Episodios(String nome, String author, String genre, String duracao, String lancamento) {
         super(nome, author, genre, duracao, lancamento);
 
         votos = new HashMap<String, Double>();
+        comentarios = new HashMap<String, String>();
     }
 
     public void classificar(String username, Double voto){
         votos.put(nome, voto);
+    }
+
+    public double mostrarClassificacao(){
+
+        double soma = 0.0;
+
+        for(var val: votos.values()){
+            soma += val;
+        }
+
+        return soma / votos.size();
+    }
+
+    public void comentar(String nome, String comentario){
+        comentarios.put(nome, comentario);
     }
 
     public void escreverDescricao(){
