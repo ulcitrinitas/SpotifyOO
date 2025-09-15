@@ -8,10 +8,12 @@ public class Episodios extends Musica {
     HashMap<String, Double> votos;
     HashMap<String, String> comentarios;
     String descricao;
+    TipoEp tipo;
 
-    Episodios(String nome, String author, String genre, String duracao, String lancamento) {
+    Episodios(String nome, String author, String genre, String duracao, String lancamento, TipoEp tipo) {
         super(nome, author, genre, duracao, lancamento);
 
+        this.tipo = tipo;
         votos = new HashMap<String, Double>();
         comentarios = new HashMap<String, String>();
     }
