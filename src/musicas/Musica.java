@@ -30,6 +30,14 @@ public class Musica {
         return seg * 1000;
     }
 
+    public String info(){
+        return "nome: " + getNome() + "\n"
+                + "autor: " + getAuthor() + "\n"
+                + "genêro: " + getGenre() + "\n"
+                + "duração: " + getDuracao() + "\n"
+                + "lançamento: " + getLancamento() + "\n" ;
+    }
+
     public String getNome() {
         return nome;
     }
