@@ -12,6 +12,8 @@ public class Usuario {
     String cpf;
     String id;
     String username;
+    boolean pagante;
+    String plano;
 
     public Usuario(String nome, String email, String senha, String username) {
         this.nome = nome;
@@ -19,12 +21,17 @@ public class Usuario {
         this.senha = senha;
         this.username = username;
 
+        this.pagante = false;
+        this.plano = "Gratuito";
+
         this.cpf = "";
 
-        var msgHsh = new MessageDigest.getInstance("SHA-256");
-        msgHsh.update((nome + Instant.now()).getBytes());
+        var id = UUID.randomUUID().toString();
+        this.id = id;
 
-        this.id = new String(msgHsh.digest());
+        this.username = username + "@" + id.substring(id.length()-6);
+
+
 
     }
 

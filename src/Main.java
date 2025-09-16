@@ -1,4 +1,5 @@
 import musicas.*;
+import usuarios.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,6 +9,11 @@ public class Main {
         System.out.println("--------------------------------------------------------");
         System.out.println(m.info());
         System.out.println("--------------------------------------------------------");
+
+        var u = new Usuario("Ulisses", "xpto@email.com", "askmklsd", "user123");
+
+        System.out.println(u.getId());
+        System.out.println(u.getUsername());
 
     }
 }
