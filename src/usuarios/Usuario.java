@@ -29,10 +29,7 @@ public class Usuario {
         var id = UUID.randomUUID().toString();
         this.id = id;
 
-        this.username = username + "@" + id.substring(id.length()-6);
-
-
-
+        this.username = username + "@" + id.substring(id.length() - 6);
     }
 
     public String getNome() {
@@ -83,6 +80,21 @@ public class Usuario {
         this.username = username;
     }
 
+    public boolean isPagante() {
+        return pagante;
+    }
+
+    public void setPagante(boolean pagante) {
+        this.pagante = pagante;
+    }
+
+    public String getPlano() {
+        return plano;
+    }
+
+    public void setPlano(String plano) {
+        this.plano = plano;
+    }
 
 
 }
