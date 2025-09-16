@@ -1,3 +1,5 @@
+package musicas;
+
 public class Musica {
 
     String nome;
