@@ -33,24 +33,25 @@ public class Usuario {
         this.username = username + "@" + id.substring(id.length() - 6);
     }
 
-    void tocarMusica(Musica m){
-        System.out.println("Tocando " + m.getNome() + "....");
-    }
+    public void fazerPagamento(){
+        this.pagante = true;
 
-    public void addMusicaBiblio(Musica m){
-        this.biblioteca.addMusica(m);
-    }
+        System.out.println("Fazendo pagamento...");
 
-    public void addMusicaBiblio(Episodio p){
-        this.biblioteca.addMusica(p);
-    }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println("Pagamento interrompido");
+            e.printStackTrace();
+        }
+        finally {
+            this.pagante = false;
+        }
 
-    public void addMusicaBiblio(Playlist p){
-        this.biblioteca.addPlaylist(p);
-    }
+        this.pagante = true;
 
-    public void addMusicaBiblio(Audiolivro a){
-        this.biblioteca.addAudiolivro(a);
+        System.out.println("Pagamento finalizado");
+
     }
 
     public double precoCalculo(){
@@ -70,6 +71,26 @@ public class Usuario {
             default:
                 return 0;
         }
+    }
+
+    void tocarMusica(Musica m){
+        System.out.println("Tocando " + m.getNome() + "....");
+    }
+
+    public void addMusicaBiblio(Musica m){
+        this.biblioteca.addMusica(m);
+    }
+
+    public void addMusicaBiblio(Episodio p){
+        this.biblioteca.addMusica(p);
+    }
+
+    public void addMusicaBiblio(Playlist p){
+        this.biblioteca.addPlaylist(p);
+    }
+
+    public void addMusicaBiblio(Audiolivro a){
+        this.biblioteca.addAudiolivro(a);
     }
 
     public String getNome() {
