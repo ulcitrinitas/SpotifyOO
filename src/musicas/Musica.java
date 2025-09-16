@@ -35,7 +35,7 @@ public class Musica {
                 + "autor: " + getAuthor() + "\n"
                 + "genêro: " + getGenre() + "\n"
                 + "duração: " + getDuracao() + "\n"
-                + "lançamento: " + getLancamento() + "\n" ;
+                + "lançamento: " + getLancamento();
     }
 
     public String getNome() {
