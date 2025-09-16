@@ -8,7 +8,7 @@ public class UsuarioGrat extends Usuario{
         super(nome, cpf, email, senha);
 
         this.pagante = false;
-        this.plano = "Gratuito";
+        this.plano = Plano.Gratuito;
     }
 
     @Override

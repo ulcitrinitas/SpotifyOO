@@ -15,7 +15,7 @@ public class Usuario {
     String id;
     String username;
     boolean pagante;
-    String plano;
+    Plano plano;
 
     public Usuario(String nome, String email, String senha, String username) {
         this.nome = nome;
@@ -24,7 +24,7 @@ public class Usuario {
         this.username = username;
 
         this.pagante = false;
-        this.plano = "Gratuito";
+        this.plano = Plano.Gratuito;
 
         this.cpf = "";
 
@@ -36,6 +36,29 @@ public class Usuario {
 
     void tocarMusica(Musica m){
         System.out.println("Tocando " + m.getNome() + "....");
+    }
+
+    public double precoCalculo(){
+
+        double valor = 22.99;
+        double desconto = valor * (40.0 / 100);
+
+        switch (this.plano){
+            case Premium:
+                return valor;
+                break;
+            case Universitario:
+                return valor - desconto;
+                break;
+            case Duo:
+                return valor;
+                break;
+            case Familia:
+                return valor * 2;
+                break;
+            default:
+                return 0;
+        }
     }
 
     public String getNome() {
@@ -94,11 +117,11 @@ public class Usuario {
         this.pagante = pagante;
     }
 
-    public String getPlano() {
+    public Plano getPlano() {
         return plano;
     }
 
-    public void setPlano(String plano) {
+    public void setPlano(Plano plano) {
         this.plano = plano;
     }
 
