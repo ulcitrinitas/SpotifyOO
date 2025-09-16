@@ -1,5 +1,7 @@
 package usuarios;
 
+import musicas.Musica;
+
 import java.security.MessageDigest;
 import java.time.Instant;
 import java.util.UUID;
@@ -30,6 +32,10 @@ public class Usuario {
         this.id = id;
 
         this.username = username + "@" + id.substring(id.length() - 6);
+    }
+
+    void tocarMusica(Musica m){
+        System.out.println("Tocando " + m.getNome() + "....");
     }
 
     public String getNome() {
