@@ -1,9 +1,6 @@
 package usuarios;
 
-import musicas.Musica;
-
-import java.security.MessageDigest;
-import java.time.Instant;
+import musicas.*;
 import java.util.UUID;
 
 public class Usuario {
@@ -16,6 +13,8 @@ public class Usuario {
     String username;
     boolean pagante;
     Plano plano;
+
+    Biblioteca biblioteca;
 
     public Usuario(String nome, String email, String senha, String username) {
         this.nome = nome;
@@ -36,6 +35,22 @@ public class Usuario {
 
     void tocarMusica(Musica m){
         System.out.println("Tocando " + m.getNome() + "....");
+    }
+
+    public void addMusicaBiblio(Musica m){
+        this.biblioteca.addMusica(m);
+    }
+
+    public void addMusicaBiblio(Episodio p){
+        this.biblioteca.addMusica(p);
+    }
+
+    public void addMusicaBiblio(Playlist p){
+        this.biblioteca.addPlaylist(p);
+    }
+
+    public void addMusicaBiblio(Audiolivro a){
+        this.biblioteca.addAudiolivro(a);
     }
 
     public double precoCalculo(){
