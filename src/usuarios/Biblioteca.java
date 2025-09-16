@@ -22,6 +22,21 @@ public class Biblioteca {
         ArrayList<Audiolivro> audiolivros = new ArrayList<>();
     }
 
+    public void addMusica(Musica musica) {
+        musicas.add(musica);
+    }
+
+    public void addPodcast(Podcast podcast) {
+        podcasts.add(podcast);
+    }
+
+    public void addPlaylist(Playlist playlist) {
+        playlists.add(playlist);
+    }
+    public void addAudiolivro(Audiolivro audiolivro) {
+        audiolivros.add(audiolivro);
+    }
+
     public Usuario getUser() {
         return user;
     }
