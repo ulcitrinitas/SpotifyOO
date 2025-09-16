@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Episodios extends Musica {
+public class Episodio extends Musica {
 
     HashMap<String, Double> votos;
     HashMap<String, String> comentarios;
     String descricao;
     TipoEp tipo;
 
-    Episodios(String nome, String author, String genre, String duracao, String lancamento, TipoEp tipo) {
+    Episodio(String nome, String author, String genre, String duracao, String lancamento, TipoEp tipo) {
         super(nome, author, genre, duracao, lancamento);
 
         this.tipo = tipo;
