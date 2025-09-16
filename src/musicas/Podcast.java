@@ -16,7 +16,7 @@ public class Podcast {
         this.artist = artist;
     }
 
-    public addEp(Episodio ep){
+    public void addEp(Episodio ep){
         episodios.add(ep);
     }
 
