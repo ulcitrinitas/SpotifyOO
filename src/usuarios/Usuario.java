@@ -46,16 +46,12 @@ public class Usuario {
         switch (this.plano){
             case Premium:
                 return valor;
-                break;
             case Universitario:
                 return valor - desconto;
-                break;
             case Duo:
                 return valor;
-                break;
             case Familia:
                 return valor * 2;
-                break;
             default:
                 return 0;
         }
@@ -97,7 +93,9 @@ public class Usuario {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId() {
+        id = UUID.randomUUID().toString();
+
         this.id = id;
     }
 
