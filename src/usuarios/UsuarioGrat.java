@@ -9,6 +9,8 @@ public class UsuarioGrat extends Usuario{
 
         this.pagante = false;
         this.plano = Plano.Gratuito;
+
+        this.getId();
     }
 
     @Override
